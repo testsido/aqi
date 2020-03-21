@@ -1,7 +1,6 @@
 Flask
 gunicorn
 scipy
-pickle
 pandas
 numpy
 matplotlib
