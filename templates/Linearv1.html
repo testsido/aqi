@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+<!-- <link rel="stylesheet" href=style.css> -->
+</head>
+<body>
+  
+	<div class="container">
+		<div class="title">
+			<h1>Air Quality Index [ AQI ] Prediction using Linear Regression</h1>
+		</div></div>
+ <div class="login">
+  <!-- <h1 style="font-size: 20px;margin-top: 0%;font-family:Luna ;">Air Quality Index(AQI) Prediction using Linear Regression</h1> -->
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predictLinear')}}"method="post">
+      <input type="text" name="T" placeholder="Temperature" required="required" />
+      <input type="text" name="TM" placeholder="Maximum Temperature" required="required" /> 
+      <input type="text" name="Tm" placeholder="Minimum Temperature" required="required" />
+      <input type="text" name="SLP" placeholder="SLP" required="required" />
+      <input type="text" name="H" placeholder="Humidity" required="required" />
+      <input type="text" name="VV" placeholder="VV" required="required" /> 
+      <input type="text" name="V" placeholder="Wind Speed" required="required" />
+      <input type="text" name="VM" placeholder="VM" required="required" />
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <h1 style="font-size: 20px;"> 
+    {{ prediction_text }}
+   </h1>
+    
+
+  
+
+ </div>
+
+
+</body>
+</html>

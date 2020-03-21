@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900&display=swap');
+*
+{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins',sans-serif;
+
+}
+body
+{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background:#ebf5fc;
+  overflow: hidden;
+}
+.form
+{
+    margin-top: 0%;
+    /* margin-bottom: -10%; */
+    position: relative ;
+    height: 100%;
+    width: 400px;
+    padding: 30px 30px 10px;
+    background: #ebf5fc ;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: -5px -5px 15px rgba(255,255,255,0.8),5px 5px 10px rgba(0,0,0,0.1);
+}
+
+.form h2
+{
+    /* color: #c7c7c7; */
+    font-size: 20px;
+    font-weight: 900;
+    font-family: Luna;
+    /* text-transform: uppercase; */
+    letter-spacing: 2px;
+    background: linear-gradient(to right, #ACB6E5, #74ebd5);
+	background-clip: text;
+	-webkit-background-clip: text;
+	color: transparent; 
+}
+.form .input
+{
+    text-align: left;
+    margin-top: 0px;
+}
+.form .input .inputBox
+{
+    margin-top: 15px;
+}
+.form .input .inputBox label
+{
+    display: block;
+    /* color: #868686; */
+    margin-bottom: 5px ;
+    font-size: 15px;
+    font-weight: bolder;
+    background: linear-gradient(to right, #ACB6E5, #74ebd5);
+	background-clip: text;
+	-webkit-background-clip: text;
+	color: transparent;
+}
+
+.form .input .inputBox input
+{
+     width: 100%;
+     height: 35px;
+     background: #ebf5fc;
+     border: none;
+     outline: none;
+     border-radius: 40px;
+     padding: 5px 15px;
+     font-size:16px;
+     color:#32a3b1;
+     text-align: center;
+     box-shadow: inset -2px -2px 6px rgba(255, 255, 255, 0.808),inset 2px 2px 6px rgba(0,0,0,0.1);
+}
+
+.form .input .inputBox input::placeholder
+{
+    color: rgba(0, 0, 0, 0.164)0, 0, 0, 0.171);
+    /* color:#bdcada ; */
+    font-weight:320;
+    font-size: 14px;
+    align-items: center;
+    text-align: center;
+}

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"> -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/indexstyle.css')}}">
+<!-- <link rel="stylesheet" href=style.css> -->
+  
+</head>
+<!-- <style>
+    a {
+        text-decoration: none;
+        color: white;
+        font-family: Luna;
+        background-image: linear-gradient(to top, #d5d4d0 0%, #d5d4d0 1%, #eeeeec 31%, #efeeec 75%, #e9e9e7 100%);
+        /* background-image: linear-gradient(to right, #ff8177 0%, #ff867a 0%, #ff8c7f 21%, #f99185 52%, #cf556c 78%, #b12a5b 100%); */
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        }
+</style> -->
+
+  <body>
+  <!-- <h1 style="font-family: Luna;font-size: 20px;margin-top: 3%;">Air Quality Index [ AQI ] Prediction</h1>
+    <form action="{{ url_for('Linear')}}"method="post">
+      <br><br><br>
+      <h3>
+      <a  href = "{{ url_for('Linear')}}"</a>Linear
+      <br> <a href = "{{ url_for('Decision')}}"</a>Decision tree
+      <br><a href = "{{ url_for('KNN')}}"</a>KNN
+      </h3>
+    </form>
+
+  <h1> 
+    {{ prediction_text }}
+  </h1> -->
+
+	<div class="container">
+		<div class="title">
+			<h1>Air Quality Index [ AQI ] Prediction</h1>
+		</div>
+		<div class="card">
+			<div class="imgBx">
+				<img src="{{ url_for('static', filename='svg/linearsvg.svg' ) }}" alt="linearsvg">
+				<!-- <img src="linearsvg.svg"> -->
+			</div>
+			<div class="contentBx">
+				<h2>Linear Regression</h2>
+				<p>Linear regression attempts to model the relationship between two variables by fitting a linear equation. One variable is considered to be an explanatory variable, and the other is to be a dependent variable.</p>
+				<a href=" {{ url_for('Linear')}} "><span>Use Me</span></a>
+			</div>
+		</div>
+		<div class="card">
+			<div class="imgBx">
+				<img src="{{ url_for('static', filename='svg/decisionsvg.svg' ) }}" alt="decisionsvg">
+				<!-- <img src="decisionsvg.svg"> -->
+			</div>
+			<div class="contentBx">
+				<h2>Decision Tree</h2>
+				<p> A decision tree is a machine learning model used to predict a target by learning decision rules from features.It breaks down the data by making a decision based on asking a series of questions. </p>
+				<a href="{{ url_for('Decision')}}"><span>Use Me</span></a>
+			</div>
+		</div>
+		<!-- <div class="card">
+			<div class="imgBx">
+				<img src="{{ url_for('static', filename='svg/knnsvg3.svg' ) }}" alt="knnsvg">
+				
+			</div>
+			<div class="contentBx">
+				<h2>KNN</h2>
+				<p> the k-nearest neighbors algorithm is a non-parametric method used for classification and regression. In both cases, the input consists of the k closest training examples in the feature space.</p>
+				<a href=" {{ url_for('KNN')}} "><span>Use Me</span></a>
+			</div>
+		</div> -->
+		<div class="card">
+			<div class="imgBx">
+				<img src="{{ url_for('static', filename='svg/randomsvg.svg' ) }}" alt="linearsvg">
+				<!-- <img src="linearsvg.svg"> -->
+			</div>
+			<div class="contentBx">
+				<h2>Random Forest</h2>
+				<p> Random forest algorithm creates decision trees on data samples and then gets the prediction from each of them and finally selects the best solution by means of voting. It is an ensemble method.</p>
+				<a href=" {{ url_for('RForest')}} "><span>Use Me</span></a>
+			</div>
+		</div>
+		<!-- <div class="card">
+			<div class="imgBx">
+				<img src="{{ url_for('static', filename='svg/linearsvg.svg' ) }}" alt="linearsvg">
+				
+			</div>
+			<div class="contentBx">
+				<h2>Linear</h2>
+				<p> Linear regression is a linear approach to modeling the relationship between a scalar response (or dependent variable) and one or more explanatory variables (or independent variables).</p>
+				<a href="#"><span>Use Me</span></a>
+			</div>
+		</div> -->
+	</div>
+
+
+</body>
+</html>

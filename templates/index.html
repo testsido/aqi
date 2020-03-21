@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<!-- <link rel="stylesheet" href=style.css> -->
+  
+</head>
+
+<body>
+ <div class="login">
+  <h1 style="font-family: Luna;font-size: 20px;margin-top: 0%;">Air Quality Index [ AQI ] Prediction</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('Linear')}}"method="post">
+      <!-- <input type="text" name="T" placeholder="Temperature" required="required" />
+      <input type="text" name="TM" placeholder="Maximum Temperature" required="required" /> 
+      <input type="text" name="Tm" placeholder="Minimum Temperature" required="required" />
+      <input type="text" name="SLP" placeholder="SLP" required="required" />
+      <input type="text" name="H" placeholder="Humidity" required="required" />
+      <input type="text" name="VV" placeholder="VV" required="required" /> 
+      <input type="text" name="V" placeholder="Wind Speed" required="required" />
+      <input type="text" name="VM" placeholder="VM" required="required" /> -->
+      <div class="hyper">
+        <a style="text-decoration:none" href = "{{ url_for('Linear')}}"<button type="submit" class="btn btn-primary btn-block btn-large">Linear</button></a>
+        <a style="text-decoration:none"href = "{{ url_for('Decision')}}"<button type="submit" class="btn btn-primary btn-block btn-large">Decision tree</button></a>
+        <a style="text-decoration:none"href = "{{ url_for('Linear')}}"<button type="submit" class="btn btn-primary btn-block btn-large">Random Forest</button></a>
+        <a style="text-decoration:none"href = "{{ url_for('KNN')}}"<button type="submit" class="btn btn-primary btn-block btn-large">KNN</button> </a>
+      </div></form>
+
+   <h1> 
+
+    {{ prediction_text }}
+   </h1>
+    
+
+  
+
+ </div>
+
+
+</body>
+</html>
