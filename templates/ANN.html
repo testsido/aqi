@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>ANN - AQI</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <!-- <link rel='stylesheet' type='text/css' media='screen' href='innerstyle.css'> -->
+    <!-- <link rel='stylesheet' type='text/css' media='screen' href='buttonstyle.css'> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/innerstyle.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/buttonstyle.css') }}">
+</head>
+<body>
+    <div class="form">
+        <h2>
+            AQI using Artificial Neural Network
+        </h2>
+        <form action="{{ url_for('predictANN')}}"method="post">
+        <div class="input">
+            <div class="inputBox">
+                <!-- <label> Tm </label> -->
+                <input type="text" name="T" placeholder="Temperature" required="required"">
+            </div>
+            <div class="inputBox">
+                <!-- <label> VSS </label> -->
+                <input type="text" name="TM" placeholder="Maximum Temperature" required="required">
+            </div>
+            <div class="inputBox">
+                <!-- <label> Tm </label> -->
+                <input type="text" name="Tm" placeholder="Minimum Temperature" required="required">
+            </div>
+            <div class="inputBox">
+                <!-- <label> Tm </label> -->
+                <input type="text" name="SLP" placeholder="SLP" required="required">
+            </div>
+            <div class="inputBox">
+                <!-- <label> Tm </label> -->
+                <input type="text" name="H" placeholder="Humidity" required="required">
+            </div>
+            <div class="inputBox">
+                <!-- <label> Tm </label> -->
+                <input type="text"  name="VV" placeholder="VV" required="required">
+            </div>
+            <div class="inputBox">
+                <!-- <label> Tm </label> -->
+                <input type="text"  name="V" placeholder="Wind Speed" required="required">
+            </div>
+            <div class="inputBox">
+                <!-- <label> Tm </label> -->
+                <input type="text" name="VM" placeholder="VM" required="required">
+            </div>                       
+            <button type="submit" class="btn">Predict</button>
+        </div>
+        </form>
+        <p style=" margin-top:15px;font-size:20px;font-weight: 900;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
+    letter-spacing: 1px;
+    /* background: linear-gradient(to right, #ACB6E5, #74ebd5); */
+    background: #00416A;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #E4E5E6, #00416A);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #E4E5E6, #00416A); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+	background-clip: text;
+	-webkit-background-clip: text;
+	color: transparent;
+        
+        "> 
+                {{ prediction_text }}
+    </p>
+        </div>
+        
+   
+    
+</body>
+</html>
