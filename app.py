@@ -31,6 +31,9 @@ def Decision():
 def RForest():
     return render_template('RForest.html')
 
+@app.route('/ANN')
+def ANN():
+    return render_template('ANN.html')
 
 
 @app.route('/predictLinear',methods=['POST'])
@@ -55,6 +58,30 @@ def predictLinear():
     output = round(prediction[0], 2)
 
     return render_template('Linear.html', prediction_text='PM2.5 = {}'.format(output))
+
+@app.route('/predictANN',methods=['POST'])
+def predictANN():
+    '''
+    For rendering results on HTML GUI
+    '''
+    model = pickle.load(open('ANNModel.pkl', 'rb'))
+    int_features =[]
+    int_features.append(float(request.form['T']))
+    int_features.append(float(request.form['TM']))
+    int_features.append(float(request.form['Tm']))
+    int_features.append(float(request.form['SLP']))
+    int_features.append(float(request.form['H']))
+    int_features.append(float(request.form['VV']))
+    int_features.append(float(request.form['V']))
+    int_features.append(float(request.form['VM']))
+    # int_features = [float(x) for x in request.form.values()]
+    final_features = [np.array(int_features)]
+    prediction = model.predict(final_features)
+
+    output = round(prediction[0], 2)
+
+    return render_template('ANN.html', prediction_text='PM2.5 = {}'.format(output))
+
 
 @app.route('/predictKNN',methods=['POST'])
 def predictKNN():
