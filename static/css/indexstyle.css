@@ -37,9 +37,11 @@ body
 .container .title h1
 {
 	font-family: Luna;
-	font-size: 20px;color:black;
+	font-size: 20px;
 	margin-top: 3%;
+	margin-bottom: 3%;
 	align-items: center;
+	letter-spacing: 2px;
 	/* Nice Oragne blue */
 	/* background: #FC5C7D;  
 background: -webkit-linear-gradient(to right, #6A82FB, #FC5C7D);
@@ -52,25 +54,12 @@ background: linear-gradient(to right, #ACB6E5, #74ebd5);  */
 
 background-image: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	background-clip: text;
 	-webkit-background-clip: text;
 	color: transparent;
 }
+
+
 .container .card
 {
 	width: 320px;
@@ -95,6 +84,7 @@ background-image: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8f
 .container .card .imgBx img
 {
 	max-width: 120px;
+	/* max-height: 120px; */
 }
 .container .card .contentBx
 {
@@ -104,14 +94,23 @@ background-image: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8f
 }
 .container .card .contentBx h2
 {
-	color: #32a3b1;
+	/* color: #32a3b1; */
+    	
+    background-image: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
 	font-weight: 700;
 	font-size: 1.4em;
 	letter-spacing: 2px;
 }
 .container .card .contentBx p
 {
+	margin-top: 2%;
+	word-spacing: 2px;
 	color: #32a3b1;
+	
+	/* font-family: 'Montserrat', sans-serif; */
 }
 .container .card .contentBx a
 {
