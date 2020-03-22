@@ -8,6 +8,7 @@
   <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
 <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
 <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"> -->
 <link rel="stylesheet" href="{{ url_for('static', filename='css/indexstyle.css')}}">
@@ -53,7 +54,7 @@
 			</div>
 			<div class="contentBx">
 				<h2>Linear Regression</h2>
-				<p>Linear regression attempts to model the relationship between two variables by fitting a linear equation. One variable is considered to be an explanatory variable, and the other is to be a dependent variable.</p>
+				<p>Linear regression attempts to model the relationship between two variables by fitting a linear equation. One variable is to be an explanatory variable, and the other is to be a dependent variable.</p>
 				<a href=" {{ url_for('Linear')}} "><span>Use Me</span></a>
 			</div>
 		</div>
@@ -68,7 +69,7 @@
 				<a href="{{ url_for('Decision')}}"><span>Use Me</span></a>
 			</div>
 		</div>
-<!-- 		 <div class="card">
+		<!-- <div class="card">
 			<div class="imgBx">
 				<img src="{{ url_for('static', filename='svg/knnsvg3.svg' ) }}" alt="knnsvg">
 				
@@ -78,10 +79,10 @@
 				<p> the k-nearest neighbors algorithm is a non-parametric method used for classification and regression. In both cases, the input consists of the k closest training examples in the feature space.</p>
 				<a href=" {{ url_for('KNN')}} "><span>Use Me</span></a>
 			</div>
-		</div>  -->
+		</div> -->
 		<div class="card">
 			<div class="imgBx">
-				<img src="{{ url_for('static', filename='svg/randomsvg.svg' ) }}" alt="linearsvg">
+				<img style="min-width: 120px; max-width: 120px; min-width: 120px; max-height: 120px;" src="{{ url_for('static', filename='svg/randomsvg.svg' ) }}" alt="linearsvg">
 				<!-- <img src="linearsvg.svg"> -->
 			</div>
 			<div class="contentBx">
@@ -90,15 +91,15 @@
 				<a href=" {{ url_for('RForest')}} "><span>Use Me</span></a>
 			</div>
 		</div>
-<!-- 		<div class="card">
+		<!-- <div class="card">
 			<div class="imgBx">
 				<img src="{{ url_for('static', filename='svg/linearsvg.svg' ) }}" alt="linearsvg">
 				
 			</div>
 			<div class="contentBx">
-				<h2>Artificial Neural Network</h2>
-				<p> Artificial Neural Networks or ANN is an information processing paradigm that is inspired by the way the biological nervous system such as brain process information.</p>
-				<a href=" {{ url_for('ANN')}} "><span>Use Me</span></a>
+				<h2>Lasso Regression</h2>
+				<p> Lasso is a regression analysis method that performs both variable selection and regularization in order to enhance the prediction accuracy and interpretability.  </p>
+				<a href=" {{ url_for('Lasso')}} "><span>Use Me</span></a>
 			</div>
 		</div> -->
 	</div>
