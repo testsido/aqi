@@ -2,6 +2,7 @@ import numpy as np
 from flask import Flask, request, jsonify, render_template
 import pickle
 import os
+import json
 
 
 app = Flask(__name__)
@@ -35,6 +36,10 @@ def RForest():
 def ANN():
     return render_template('ANN.html')
 
+@app.route('/Lasso')
+def Lasso():
+    return render_template('Lasso.html')
+
 
 @app.route('/predictLinear',methods=['POST'])
 def predictLinear():
@@ -56,7 +61,7 @@ def predictLinear():
     prediction = model.predict(final_features)
 
     output = round(prediction[0], 2)
-
+    # return json.dumps({'AQi':output});
     return render_template('Linear.html', prediction_text='PM2.5 = {}'.format(output))
 
 @app.route('/predictANN',methods=['POST'])
@@ -153,6 +158,28 @@ def predictRF():
 
     return render_template('RForest.html', prediction_text='PM2.5 = {}'.format(output))
 
+@app.route('/predictLasso',methods=['POST'])
+def predictLasso():
+    '''
+    For rendering results on HTML GUI
+    '''
+    model = pickle.load(open('LassoModel.pkl', 'rb'))
+    int_features =[]
+    int_features.append(float(request.form['T']))
+    int_features.append(float(request.form['TM']))
+    int_features.append(float(request.form['Tm']))
+    int_features.append(float(request.form['SLP']))
+    int_features.append(float(request.form['H']))
+    int_features.append(float(request.form['VV']))
+    int_features.append(float(request.form['V']))
+    int_features.append(float(request.form['VM']))
+    # int_features = [float(x) for x in request.form.values()]
+    final_features = [np.array(int_features)]
+    prediction = model.predict(final_features)
+
+    output = round(prediction[0], 2)
+
+    return render_template('Lasso.html', prediction_text='PM2.5 = {}'.format(output))
 
 # @app.route('/predict_api',methods=['POST'])
 # def predict_api():
