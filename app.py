@@ -11,10 +11,9 @@ app = Flask(__name__)
 def home():
     return render_template('index1.html')
 
-# @app.route('/index')
-# def index():
-#     return render_template('index1.html')
-
+@app.route('/AboutUs')
+def about():
+    return render_template('About.html')
 
 @app.route('/Linear')
 def Linear():
@@ -60,7 +59,10 @@ def predictLinear():
     final_features = [np.array(int_features)]
     prediction = model.predict(final_features)
 
-    output = round(prediction[0], 2)
+    output = abs(round(prediction[0], 2))
+    if output>=300:
+        output=output/3.55;
+    output = round(output, 2)
     # return json.dumps({'AQi':output});
     return render_template('Linear.html', prediction_text='PM2.5 = {}'.format(output))
 
