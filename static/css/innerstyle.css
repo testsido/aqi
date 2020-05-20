@@ -15,15 +15,15 @@ body
   min-height: 100vh;
   background:#ebf5fc;
   overflow: hidden;
+  /* overflow: scroll; */
 }
 .form
 {
-    margin-top: 0%;
-    /* margin-bottom: -10%; */
+    margin-top: -4%;
     position: relative ;
     height: 100%;
     width: 400px;
-    padding: 30px 30px 10px;
+    padding: 10px 30px 10px;
     background: #ebf5fc ;
     border-radius: 10px;
     text-align: center;
@@ -33,7 +33,7 @@ body
 .form h2
 {
     /* color: #c7c7c7; */
-    font-size: 20px;
+    font-size: 15px;
     font-weight: 900;
     font-family: Luna;
     /* text-transform: uppercase; */
