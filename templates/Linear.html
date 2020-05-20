@@ -9,8 +9,24 @@
     <!-- <link rel='stylesheet' type='text/css' media='screen' href='buttonstyle.css'> -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/innerstyle.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/buttonstyle.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/indexstyle.css') }}">
 </head>
 <body>
+    <div class="container">
+		<div class="home">
+			<a href="  {{ url_for('home')}}  "> <h1> 
+				<!-- the fucntion name(from app.py) has to be kept for redirection -->
+				<img src="{{ url_for('static', filename='svg/home.svg' ) }}" alt="linearsvg">
+			</h1></a>
+		</div>
+		<div class="title">
+			<!-- <h1>Know Us</h1> -->
+		</div>
+		<div class="about">
+			<a href="  {{ url_for('about')}}  "> <h1>
+				<img src="{{ url_for('static', filename='svg/about.svg' ) }}" alt="linearsvg">
+			</h1></a>
+		</div>
     <div class="form">
         <h2>
             AQI using Linear Regression
@@ -67,6 +83,7 @@ background: linear-gradient(to right, #E4E5E6, #00416A); /* W3C, IE 10+/ Edge, F
         "> 
                 {{ prediction_text }}
     </p>
+        </div>
         </div>
         
    
